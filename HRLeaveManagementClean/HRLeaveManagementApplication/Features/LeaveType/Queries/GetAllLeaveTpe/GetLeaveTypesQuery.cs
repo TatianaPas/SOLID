@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using HRLeaveManagementApplication.Features.LeaveType.Queries.GetLeaveTypeDetails;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using HRLeaveManagementApplication.Contracts.Persistance;
+using HRLeaveManagementApplication.Features.LeaveType.Queries.GetAllLeaveTpe;
+using HRLeaveManagementApplication.Features.LeaveType.Queries.GetLeaveTypeDetails;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.LeaveType.Queries.GetAllLeaveTpe
+namespace HRLeaveManagementApplication.Features.LeaveType.Queries.GetAllLeaveTypes
 {
     public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypesQuery, List<LeaveTypeDetailsDto>>
     {

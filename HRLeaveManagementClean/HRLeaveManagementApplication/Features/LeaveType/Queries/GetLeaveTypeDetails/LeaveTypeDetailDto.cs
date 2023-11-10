@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HRLeaveManagementApplication.Features.LeaveType.Queries.GetLeaveTypeDetails
 {
-    internal class LeaveTypeDetailsDto
+    public class LeaveTypeDetailsDto
     {
         public int Id { get; set; }   
         public string Name { get; set; } = string.Empty;
