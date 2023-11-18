@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HRLeaveManagementApplication.Features.LeaveType.Queries.GetAllLeaveTypes
 {
-    public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypesQuery, List<LeaveTypeDetailsDto>>
+    public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypesQuery, List<LeaveTypeDto>>
     {
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
@@ -25,14 +25,14 @@ namespace HRLeaveManagementApplication.Features.LeaveType.Queries.GetAllLeaveTyp
             this._logger = logger;
         }
 
-        public async Task<List<LeaveTypeDetailsDto>> Handle(GetLeaveTypesQuery request, CancellationToken cancellationToken)
+        public async Task<List<LeaveTypeDto>> Handle(GetLeaveTypesQuery request, CancellationToken cancellationToken)
         {
 
             //query the database
             var leaveTypes =await _leaveTypeRepository.GetAsync();
 
             //convert data objects to DTO objects
-            var data = _mapper.Map<List<LeaveTypeDetailsDto>>(leaveTypes);
+            var data = _mapper.Map<List<LeaveTypeDto>>(leaveTypes);
 
             //return list of DTO objects
             _logger.LogInformation("leave types were retrived sucessfully");

@@ -12,7 +12,7 @@ namespace HR.LeaveManagement.Persistence
         public static IServiceCollection AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<HrDatabaseContext>(options => {
-                options.UseSqlServer(configuration.GetConnectionString("HrDatabaseConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("HrDatabaseConnectionString"));
             });
 
             services.AddScoped(typeof(HRLeaveManagementApplication.Contracts.Persistance.IGenericRepository<>), typeof(GenericRepository<>));
