@@ -1,4 +1,5 @@
 using HR.LeaveManagement.Persistence;
+using HRLeavemanagement.API.Middleware;
 using HRLeaveManagement.Infrastructure;
 using HRLeaveManagementApplication;
 
@@ -23,6 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();   
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
